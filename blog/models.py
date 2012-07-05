@@ -1,3 +1,5 @@
+from django.contrib import admin
+
 from django.db import models
 
 # Create your models here.
@@ -12,7 +14,7 @@ class Post(models.Model):
     created=models.DateField()
     updated=models.DateField()
 
-class Comment(models.Model):
+class Blog(models.Model):
 
     body=models.TextField()
 
@@ -24,6 +26,8 @@ class Comment(models.Model):
     post=models.ForeignKey(Post,related_name = 'Post')
 
     
-  
+admin.site.register(Post)
+admin.site.register(Blog)
+
 
     
